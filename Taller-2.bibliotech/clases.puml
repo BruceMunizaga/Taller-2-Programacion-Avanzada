@@ -1,0 +1,39 @@
+@startuml
+left to right direction
+skin rose
+
+class Socio{
+    -nombre: String
+    -apellido: String
+    -correoElectronico: String
+    -numeroDeSocio: int
+    -contrasenia: String
+    -arreglo: listaDeLibrosPrestados[]
+    +Socio(nombre: String, apellido: String, correoElectronico: String, numeroDeSocio: int, contrasenia: String)
+    +getNombre(): String
+    +getApellido(): String
+    +getNombreCompleto(): String
+    +getCorreoElectronico(): String
+    +getNumeroDeSocio(): int
+    +getContrasenia(): String
+    +agregarLibro(): void
+    +setContrasenia(): void
+    +setCorreoElectronico(): void
+}
+class Libro{
+    -isbn: int
+    -titulo: String
+    -autor: String
+    -categoria: String
+    -calificacion: double
+    +Libro(isbn: int, titulo: String, autor: String, categoria: String, calificacion: double)
+    +getIsbn(): String
+    +getTitulo(): String
+    +getautor(): String
+    +getCategoria(): String
+    +getCalificacion(): double
+    +setCalificacion(): void
+}
+
+Socio"1" --o "0..2"Libro: -librosEnPrestamo[]
+@enduml

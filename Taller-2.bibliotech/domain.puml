@@ -1,0 +1,17 @@
+@startuml
+left to right direction
+skin rose
+
+entity Libro{
+    titulo
+    autor
+    categoria
+}
+entity Socio{
+    nombre
+    {static}numero de socio
+    lista de libros prestados
+}
+Socio"1"--"1..*"Libro: posee >
+
+@enduml
